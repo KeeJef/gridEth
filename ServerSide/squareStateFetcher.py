@@ -1,4 +1,5 @@
 import json
+from flask import Flask, json
 import numpy as np
 
 numberOfSquares = 12000
@@ -11,6 +12,11 @@ for x in range(numberOfSquares):
     arrayOfSquares.append(newSquare)
     pass
 
+api = Flask(__name__)
 
+@api.route('/squares', methods=['GET'])
+def get_squares():
+  return json.dumps(arrayOfSquares)
 
-print(json.dumps(arrayOfSquares))
+if __name__ == '__main__':
+    api.run()
