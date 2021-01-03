@@ -6,17 +6,6 @@
   <router-view/>
 </template>
 
-<script>
-export default {
-  name: 'square',
-  data: function () {
-     return {
-       clicked: false
-     }
-  }
-}
-</script>
-
 
 <style>
 #app {

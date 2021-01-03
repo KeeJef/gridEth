@@ -1,5 +1,6 @@
 import json
-from flask import Flask, json
+from flask import Flask
+from flask_cors import CORS
 import numpy as np
 
 numberOfSquares = 12000
@@ -13,6 +14,7 @@ for x in range(numberOfSquares):
     pass
 
 api = Flask(__name__)
+CORS(api)
 
 @api.route('/squares', methods=['GET'])
 def get_squares():

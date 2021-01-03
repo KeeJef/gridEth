@@ -3,7 +3,9 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <squareBox/>
-    
+    <ul>
+      <li v-for="colours in squareArrayValues" :key="colours.number" v-text="colours.colour"></li>
+    </ul>
   </div>
 </template>
 
