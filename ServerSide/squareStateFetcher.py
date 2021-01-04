@@ -4,7 +4,7 @@ from flask_cors import CORS
 import numpy as np
 import random
 
-numberOfSquares = 12000
+numberOfSquares = 120
 arrayOfSquares = []
 
 for x in range(numberOfSquares):

@@ -1,6 +1,6 @@
 <template>
-  <div class="squareBox">
-    <square v-bind:colour = TestFunction() v-for="index in 120" :key="index"/> 
+  <div v-if="dataReady" class="squareBox">
+    <square v-for="index in 120" :key="index" v-bind:colour=squaresFromAPI[1].colour /> 
     </div>
 </template>
 
@@ -12,12 +12,16 @@ export default {
   components: {square},
   name: 'squareBox',
 
+  data () {
+    return {
+        dataReady: false,
+        // other data
+    }
+},
+
   async mounted(){
     this.squaresFromAPI = await squaresAPI.getSquares()
-    console.log(this.squaresFromAPI)
-  },
-  async TestFunction(){
-    return squaresAPI.getSquares()
+    this.dataReady = true
   }
 }
 </script>
