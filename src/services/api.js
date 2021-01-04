@@ -7,6 +7,15 @@ export default {
             return response.data
         })
 
-    }
+    },
+
+    async getSquaresAsync() {
+        try{
+          let response = await axios.get('http://localhost:5000/squares')
+          return response.data
+        }catch(err){
+          console.log(err)
+        }
+      }
 }
 

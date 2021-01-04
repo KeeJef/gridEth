@@ -1,16 +1,24 @@
 <template>
   <div class="squareBox">
-    <square v-for="index in 120" :key="index"/>  
-</div>
+    <square v-bind:colour = TestFunction() v-for="index in 120" :key="index"/> 
+    </div>
 </template>
 
 <script>
 import square from '@/components/square.vue'
-
+import squaresAPI from '../services/api.js'
 
 export default {
-  components: { square},
-  name: 'squareBox'
+  components: {square},
+  name: 'squareBox',
+
+  async mounted(){
+    this.squaresFromAPI = await squaresAPI.getSquares()
+    console.log(this.squaresFromAPI)
+  },
+  async TestFunction(){
+    return squaresAPI.getSquares()
+  }
 }
 </script>
 

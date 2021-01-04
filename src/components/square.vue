@@ -1,10 +1,11 @@
 <template>
-  <div class="square" colour="grey" v-on:click="clicked = !clicked" v-bind:class="{ active: clicked }"></div>
+  <div class="square" v-on:click="clicked = !clicked" v-bind:class="{ active: clicked }"></div>
 </template>
 
 <script>
 export default {
   name: 'square',
+  props:{colour: String},
   data: function () {
      return {
        clicked: false
