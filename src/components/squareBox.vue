@@ -1,6 +1,6 @@
 <template>
   <div v-if="dataReady" class="squareBox">
-    <square v-for="index in 120" :key="index" v-bind:colour=squaresFromAPI[1].colour /> 
+    <square v-for="(item, index) in 120" :key="index" v-bind:colour=squaresFromAPI[index].colour /> 
     </div>
 </template>
 

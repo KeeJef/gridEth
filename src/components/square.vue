@@ -1,5 +1,5 @@
 <template>
-  <div class="square" v-on:click="clicked = !clicked" v-bind:class="{ active: clicked }"></div>
+  <div class="square" v-bind:style="{ backgroundColor: colourData }" v-on:click="clicked = !clicked"  v-bind:class="{active: clicked }"></div>
 </template>
 
 <script>
@@ -8,8 +8,11 @@ export default {
   props:{colour: String},
   data: function () {
      return {
-       clicked: false
+       clicked: false,
+       colourData: "#"+ this.colour
+
      }
+     
   }
 }
 </script>
@@ -19,10 +22,12 @@ export default {
 .square{
     height: 10px;
     width: 10px;
+    background-color: transparent;
     outline: 1px solid #CCC;
 }
 .active{
     height: 10px;
+    background-color: transparent;
     width: 10px;
     outline: 1px solid rgb(235, 56, 56);
 }
