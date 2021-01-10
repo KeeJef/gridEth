@@ -10,10 +10,17 @@ export default {
      return {
        clicked: false,
        colourData: "#"+ this.colour
-
      }
      
-  }
+  },
+watch : {
+  colour: {
+    handler: function() {
+        this.colourData = "#"+ this.colour;
+    },
+    immediate: true,
+  },
+},
 }
 </script>
 

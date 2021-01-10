@@ -28,28 +28,15 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
 
-    {{squares[1]}}
   </div>
 </template>
 
 <script>
-import squaresAPI from '../services/api.js'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  },
-  data (){
-    return{
-      squares: []
-    }
-  },
-  created(){
-    squaresAPI.getSquares()
-    .then(squares => {
-      this.squares = squares
-    })
-  }
+  } 
 }
 </script>
 
