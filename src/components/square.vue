@@ -33,9 +33,17 @@ watch : {
     outline: 1px solid #CCC;
 }
 .active{
-    height: 10px;
-    background-color: transparent;
-    width: 10px;
-    outline: 1px solid rgb(235, 56, 56);
+    width: 320px;
+    height: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
 }
+
 </style>

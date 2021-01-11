@@ -27,7 +27,7 @@ export default {
     pollData() {
       this.polling =  setInterval(async() => {
         this.squaresFromAPI = await squaresAPI.getSquares();
-      }, 3000);
+      }, 10000000); //change up when polling is needed
     },
   },
   beforeUnmount() {
